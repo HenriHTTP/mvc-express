@@ -4,6 +4,7 @@ const handlebars = require("express-handlebars");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const port = process.env.PORT || 3001; 
+const postsRoutes = require('./routes/postsRoutes')
 
 dotenv.config();
 app.use(express.urlencoded({ extended: true })); // configuration for express accept datas on the html forms
@@ -17,7 +18,7 @@ app.engine('handlebars', handlebars({ // handlebars configuration
 
 app.set("view engine", "handlebars");
 
-app.get('/',(req,res)=>{ 
+/*app.get('/',(req,res)=>{ 
     res.render('index')
 });
 
@@ -37,7 +38,13 @@ app.post("/upload", (req,res)=> {
  
  
   
+});*/
+
+app.get('/',(req,res)=>{ 
+  res.render('create')
 });
+
+app.use('/', postsRoutes);
 
 
 
