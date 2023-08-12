@@ -29,5 +29,3 @@ yarn.lock
 
 # Windows thumbnail cache
 Thumbs.db
-#ambient variables 
-.env
