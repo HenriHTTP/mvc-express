@@ -18,33 +18,12 @@ app.engine('handlebars', handlebars({ // handlebars configuration
 
 app.set("view engine", "handlebars");
 
-/*app.get('/',(req,res)=>{ 
-    res.render('index')
-});
-
-app.post("/upload", (req,res)=> { 
-  try{
-    const posts = {
-      content: req.body.content,
-      title: req.body.title,  // Adicione esta linha para acessar o título do formulário
-      notes: req.body.notes   // Adicione esta linha para acessar as observações do formulário
-  };
-    console.log(req.body)
-    //console.log(posts)
-    res.status(200).redirect('/tasks')
-  }catch(err){ 
-    res.staus(500).json({Message : `houve um erro na requisição ${errr}`})
-  }
- 
- 
-  
-});*/
 
 app.get('/',(req,res)=>{ 
   res.render('create')
 });
 
-app.use('/', postsRoutes);
+app.use('/', postsRoutes); // main routes
 
 
 

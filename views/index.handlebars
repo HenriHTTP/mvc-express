@@ -1,0 +1,13 @@
+<div>
+{{#each data}}
+
+    <h2>{{dataValues.title}}</h2>
+
+    <p>{{dataValues.content}}</p>
+    <p>{{dataValues.notes}}</p>
+        <button ><a href="/drop/{{dataValues.id}}"><i class="fa-solid fa-trash"></i></a></button>
+        <button ><a href="/update/{{dataValues.id}}"><i class="fa-solid fa-pen-to-square"></i></a></button>
+    <hr>
+
+</div>
+{{/each}}
