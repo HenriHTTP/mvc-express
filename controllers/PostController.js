@@ -1,13 +1,16 @@
 const posts =  require("../models/posts")
 
-module.exports  = class  PostController {  //redirect method
+
+module.exports  = class  PostController {  
+
+    // Method to render the post creation page
     static createPost(req,res){ 
         res.render('create')
     }
-  
-    static async createPostSave  (req, res) {   // method for create post and save
-        if(!req.body){
-            res.status(200).json({message:"this request are NULL"})
+    // method for create post and save
+    static async createPostSave  (req, res) {   
+        if(!req.body.content ||!req.body.title ){
+            res.status(200).json({ message: "Title and content are required"})
         }
         try{ 
             
@@ -20,11 +23,11 @@ module.exports  = class  PostController {  //redirect method
         }
       
     }
-       
-    static async UpdatePost (req,res){ //redirect method
+
+    //redirect method for post and load data posts in page  
+    static async UpdatePost (req,res){ 
         try { 
             const data = await posts.findByPk( req.params.id )
-            console.log(data.dataValues)
             res.render('update',{data:  data.dataValues})
            
         } catch (err) {
@@ -33,7 +36,9 @@ module.exports  = class  PostController {  //redirect method
 
        
     }
-    static async  ShowAllPost (req,res) { // find all method
+
+     // Method to render the page displaying all posts
+    static async  ShowAllPost (req,res) { 
         try {
 
             const data= await posts.findAll();
@@ -43,11 +48,14 @@ module.exports  = class  PostController {  //redirect method
             res.status(500).json({message:`has a error in your resquest for server ${err}`});
           }
     }
+    // Method to delete a post
     static async DropPost (req,res){ 
         try{ 
           
             const foundPosts = await posts.findByPk( req.params.id ) // search id
             await foundPosts.destroy()
+            
+
             res.status(200).redirect('/home')
 
         }catch(err){
@@ -55,6 +63,7 @@ module.exports  = class  PostController {  //redirect method
             res.status(500).json({message:`has a error in your resquest for server ${err}`});
         }
     }
+      // Method to update and save changes to a post
     static async UpdatePostSave (req,res){ 
         try{ 
             const {title,content,notes} = req.body;

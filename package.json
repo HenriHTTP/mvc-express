@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./index.js",
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./index.js",
+    "build:css": "tailwindcss build ./public/css/tailwind.config.css -o public/css/styles.css"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "sequelize": "^6.32.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "tailwindcss": "^3.3.3"
   }
 }

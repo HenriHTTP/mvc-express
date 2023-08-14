@@ -1,9 +1,11 @@
-<form action="/createPost" method="post">
-    <h1>título</h1>
-    <input type="text" name="title" id="title">
-    <h1>conteúdo</h1>
-     <textarea name="content" id="" cols="30" rows="10"> </textarea>
-     <h1>observações</h1>
-    <input type="text" name="notes" id="notes">
-    <input type="submit" value="Enviar">
+<div class="w-full p-7">
+<form action="/createPost" class="bg-white sm:w-full md:w-full lg:w-3/4 xl:w-3/4 2xl:w-3/4  m-auto flex justify-around flex-col text-left p-4" method="post">
+    <h1  class="p-2 text-lg"><i class="fa-solid fa-paperclip"></i> Title</h1>
+    <input  placeholder="Enter a title..." class="p-2  text-gray-500 border-solid border-2 border-neutral-600 rounded-md  focus:outline-none"  type="text" name="title" id="title">
+    <h1 class="p-2 text-lg"><i class="fa-solid fa-book"></i> Content</h1>
+     <textarea name="content" class="p-3   text-gray-500 resize-none border-solid border-2 border-neutral-600 rounded-md  focus:outline-none" cols="30" rows="10"> </textarea>
+     <h1 class="p-2 text-lg"><i class="fa-regular fa-note-sticky"></i> Notes</h1>
+    <input  placeholder="Add any notes or comments..." type="text" class="p-2 border-solid border-2  border-neutral-600  text-gray-500 rounded-md  focus:outline-none mb-5" name="notes" id="notes">
+    <input class="p-2 text-white bg-red-700 w-20 m-auto rounded-md text-base" type="submit" value="Enviar">
 </form>
+</div>

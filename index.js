@@ -10,6 +10,7 @@ dotenv.config();
 app.use(express.urlencoded({ extended: true })); // configuration for express accept datas on the html forms
 app.use(express.json()); // cors configuration
 app.use(cors());
+app.use(express.static('public'))
 
 app.engine('handlebars', handlebars({ // handlebars configuration
     layoutsDir: './views/layouts/', 
@@ -20,7 +21,7 @@ app.set("view engine", "handlebars");
 
 
 app.get('/',(req,res)=>{ 
-  res.render('create')
+  res.render('index')
 });
 
 app.use('/', postsRoutes); // main routes

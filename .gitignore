@@ -29,3 +29,6 @@ yarn.lock
 
 # Windows thumbnail cache
 Thumbs.db
+
+# tailwind 
+public/css/tailwind.config.css

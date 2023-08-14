@@ -1,13 +1,24 @@
-<div>
+<div class="w-ful m-auto flex flex-col p-4 sm:p-7 md:p-7 lg:p-7 xl:p-7 2xl:p-7">
+
+
 {{#each data}}
+<div class="m-auto  sm:w-full md:w-full lg:w-3/4 xl:w-3/4 p-4 flex justify-around flex-col rounded-md text-center mt-4 bg-white">
 
-    <h2>{{dataValues.title}}</h2>
+    <h2 class="p-3  text-gray-700 text-xl">{{dataValues.title}}</h2>
 
-    <p>{{dataValues.content}}</p>
-    <p>{{dataValues.notes}}</p>
+    <p class="p-2 text-lg  text-gray-600 text-justify m-auto">{{dataValues.content}}</p>
+   {{#if dataValues.notes}}
+  <p class="p-2 text-gray-400 text-center"><i class="fa-regular fa-note-sticky"></i> {{dataValues.notes}}</p>
+    {{else}}
+  <p class="p-2 text-gray-400 text-center"><i class="fa-regular fa-note-sticky"></i> No notes available.</p>
+    {{/if}}
+    <hr>
+    <section class="w-full text-gray-700 flex justify-around p-2 ">
         <button ><a href="/drop/{{dataValues.id}}"><i class="fa-solid fa-trash"></i></a></button>
         <button ><a href="/update/{{dataValues.id}}"><i class="fa-solid fa-pen-to-square"></i></a></button>
-    <hr>
+    </section>
+       
 
 </div>
 {{/each}}
+</div>
