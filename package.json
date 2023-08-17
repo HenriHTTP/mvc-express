@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
-    "build:css": "tailwindcss build ./public/css/tailwind.config.css -o public/css/styles.css"
+    "build:css": "tailwindcss build ./public/css/tailwind.css -o public/css/styles.css"
   },
   "keywords": [],
   "author": "",
